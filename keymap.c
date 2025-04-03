@@ -39,10 +39,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_BASE] = LAYOUT_split_3x6_3(
-        KC_NO,  KC_Q,     KC_W,    KC_E,     KC_R,     KC_T,                         KC_Y,     KC_U,    KC_I,     KC_O,      KC_P,     KC_NO,
-        KC_NO, LA(KC_A), LC(KC_S), LS(KC_D), LG(KC_F), KC_G,                         KC_H, LG(KC_J),  LS(KC_K), LC(KC_L), LA(KC_SCLN), KC_NO,
-        KC_NO,  KC_Z,     KC_X,    KC_C,     KC_V,     KC_B,                         KC_N,     KC_M,   KC_COMM,  KC_DOT,   KC_SLSH,    KC_NO,
-                                        KC_LSFT, L(KC_SPC), R(KC_ENT),            R(KC_ESC), L(KC_BSPC), KC_BSLS
+        KC_T,   KC_R,     KC_E,    KC_W,     KC_Q,    KC_NO,                         KC_Y,     KC_U,    KC_I,     KC_O,      KC_P,     KC_NO,
+        KC_G, LG(KC_F), LS(KC_D), LC(KC_S), LA(KC_A), KC_NO,                         KC_H, RG(KC_J),  RS(KC_K), RC(KC_L), RA(KC_SCLN), KC_NO,
+        KC_B,   KC_V,     KC_C,    KC_X,     KC_Z,    KC_NO,                         KC_N,     KC_M,   KC_COMM,  KC_DOT,   KC_SLSH,    KC_NO,
+                                        R(KC_ENT), L(KC_SPC), KC_LSFT,            R(KC_ESC), L(KC_BSPC), KC_BSLS
     ),
      /* Lower layout
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
@@ -59,18 +59,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_LOWER] = LAYOUT_split_3x6_3(
-        KC_NO,  KC_NO,       KC_NO,     KC_NO,    KC_F11,   KC_F12,          KC_GRV,  KC_NO,   KC_NO,    KC_LBRC, KC_RBRC,  KC_NO,
-        KC_NO, LA(KC_F10), LC(KC_F9), LS(KC_F8), LG(KC_F7), KC_F6,           KC_1,  LG(KC_2), LS(KC_3), LC(KC_4), LA(KC_5), KC_NO,
-        KC_NO,  KC_F5,       KC_F4,     KC_F3,    KC_F2,    KC_F1,           KC_6,    KC_7,    KC_8,      KC_9,    KC_0,    KC_NO,
-                                          KC_LSFT, KC_SPC, KC_ENT,           KC_ESC, KC_BSPC, KC_TAB
+        KC_F12, KC_F11,   KC_NO,   KC_NO,    KC_NO,   KC_NO,          KC_GRV,  KC_NO,   KC_NO,    KC_LBRC, KC_RBRC,  KC_NO,
+        KC_F6, LG(KC_F7), LS(KC_F8), LC(KC_F9), LA(KC_F10), KC_NO,           KC_1,  LG(KC_2), LS(KC_3), LC(KC_4), LA(KC_5), KC_NO,
+        KC_F1,   KC_F2,     KC_F3,    KC_F4,     KC_F5,    KC_NO,           KC_6,    KC_7,    KC_8,      KC_9,    KC_0,    KC_NO,
+                                          KC_ENT, KC_SPC, KC_LSFT,           KC_ESC, KC_BSPC, KC_TAB
     ),
      /* Navigation/Media layout
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │   │   │   │   │   │       │   │   │   │   │   │   │
+      * │   │Bot│Mk │Clr│   │   │       │   │   │   │VUp│   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │   │   │   │   │   │       │PSc│   │   │   │   │   │
+      * │   │   │   │   │   │   │       │PSc│   │   │VDn│   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │   │   │   │   │   │       │   │   │   │   │   │   │
+      * │   │   │   │   │   │   │       │  │  │  │  │   │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │LSh├───┐           ┌───┤RSh│
@@ -79,10 +79,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_NAV] = LAYOUT_split_3x6_3(
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          KC_NO,   KC_HOME,       KC_END,                KC_NO,   KC_NO, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          KC_PSCR, CTL_T(KC_TAB), CTL_T(SFT_T(KC_TAB)), KC_NO,   KC_NO, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          KC_LEFT, KC_DOWN,       KC_UP,                 KC_RGHT, KC_NO, KC_NO,
-                             KC_NO, KC_NO, KC_NO,          KC_NO,   KC_NO,         KC_NO
+        KC_NO, KC_NO, QK_CLEAR_EEPROM, QK_MAKE, QK_BOOT, KC_NO,      KC_NO,   KC_HOME, KC_END,  KC_VOLU, KC_NO,    KC_NO,
+        KC_NO, KC_NO,   KC_NO,         KC_NO,     KC_NO, KC_NO,      KC_PSCR, S(KC_6), S(KC_4), KC_VOLD, KC_NO,    KC_NO,
+        KC_NO, KC_NO,   KC_NO,         KC_NO,     KC_NO, KC_NO,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,    KC_NO,
+                                       KC_NO,     KC_NO, KC_NO,      KC_NO,   KC_NO,   KC_NO
     ),
      /* Adjust layout
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_ADJUST] = LAYOUT_split_3x6_3(
-        KC_NO, QK_BOOT, QK_MAKE, KC_NO, KC_NO, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, QK_MAKE, QK_BOOT,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO,
         KC_NO,  KC_NO,   KC_NO,  KC_NO, KC_NO, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         KC_NO,  KC_NO,   KC_NO,  KC_NO, KC_NO, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                                  KC_NO, KC_NO, KC_NO,       KC_NO, KC_NO, KC_NO

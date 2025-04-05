@@ -79,9 +79,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_NAV] = LAYOUT_split_3x6_3(
-        KC_NO, KC_NO, QK_CLEAR_EEPROM, QK_MAKE, QK_BOOT, KC_NO,      KC_NO,   KC_HOME, KC_END,  KC_VOLU, KC_NO,    KC_NO,
-        KC_NO, KC_NO,   KC_NO,         KC_NO,     KC_NO, KC_NO,      KC_PSCR, S(KC_6), S(KC_4), KC_VOLD, KC_NO,    KC_NO,
-        KC_NO, KC_NO,   KC_NO,         KC_NO,     KC_NO, KC_NO,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,    KC_NO,
+        KC_NO, KC_NO, QK_CLEAR_EEPROM, QK_MAKE, QK_BOOT, KC_NO,      KC_NO,   KC_HOME, KC_END,  KC_VOLU, S(C(KC_TAB)), KC_NO,
+        KC_NO, KC_NO,   KC_NO,         KC_NO,     KC_NO, KC_NO,      KC_PSCR, S(KC_6), S(KC_4), KC_VOLD, C(KC_TAB),    KC_NO,
+        KC_NO, KC_NO,   KC_NO,         KC_NO,     KC_NO, KC_NO,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,        KC_NO,
                                        KC_NO,     KC_NO, KC_NO,      KC_NO,   KC_NO,   KC_NO
     ),
      /* Adjust layout
